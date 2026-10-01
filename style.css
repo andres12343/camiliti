@@ -1,0 +1,1126 @@
+/* ==================================================
+   GENERAL
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --papel: #fffaf0;
+    --tinta: #403832;
+    --rosa: #e85d75;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.8),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,230,190,.35),
+            transparent 30%
+        ),
+        #eee3cf;
+
+    color: var(--tinta);
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+}
+
+
+/* ==================================================
+   BOTONES
+   ================================================== */
+
+button {
+    border: none;
+
+    background: var(--rosa);
+
+    color: white;
+
+    padding: 13px 27px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 0 #c94a61;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+button:hover {
+    transform:
+        translateY(-2px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 6px 0 #c94a61;
+}
+
+button:active {
+    transform:
+        translateY(2px);
+
+    box-shadow:
+        0 2px 0 #c94a61;
+}
+
+
+/* ==================================================
+   INICIO
+   ================================================== */
+
+.inicio {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.nota-inicio {
+    position: relative;
+
+    width: min(520px, 92vw);
+
+    padding: 65px 45px 55px;
+
+    text-align: center;
+
+    background: var(--papel);
+
+    box-shadow:
+        5px 8px 20px
+        rgba(70,50,30,.18);
+
+    transform: rotate(-1.2deg);
+}
+
+.nota-inicio::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        1px dashed #d8c8ac;
+
+    pointer-events: none;
+}
+
+.garabato {
+    font-family: cursive;
+
+    color: var(--rosa);
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    margin-bottom: 15px;
+}
+
+.fecha {
+    font-size: 13px;
+
+    color: #9b8b79;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+.nota-inicio h1 {
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(42px, 8vw, 65px);
+
+    font-weight: normal;
+
+    color: #3d342d;
+
+    margin-bottom: 12px;
+}
+
+.intro {
+    font-family: cursive;
+
+    font-size: 24px;
+
+    color: #716358;
+
+    margin-bottom: 32px;
+}
+
+.pequena-nota {
+    margin-top: 35px;
+
+    color: #a99b8a;
+
+    font-size: 12px;
+
+    transform: rotate(-2deg);
+}
+
+
+/* ==================================================
+   PORTADA
+   ================================================== */
+
+.portada {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+}
+
+.portada-papel {
+    position: relative;
+
+    width: min(650px, 92vw);
+
+    padding: 75px 55px;
+
+    text-align: center;
+
+    background: var(--papel);
+
+    box-shadow:
+        4px 8px 18px
+        rgba(72,50,30,.15);
+
+    transform: rotate(1deg);
+}
+
+.chincheta {
+    position: absolute;
+
+    top: -14px;
+    left: 50%;
+
+    width: 24px;
+    height: 24px;
+
+    transform: translateX(-50%);
+
+    background: #e66a6a;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 3px 5px rgba(0,0,0,.2);
+}
+
+.escrito-pequeno {
+    font-family: cursive;
+
+    color: var(--rosa);
+
+    font-size: 21px;
+
+    margin-bottom: 18px;
+}
+
+.portada h2 {
+    max-width: 500px;
+
+    margin: auto;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(35px, 6vw, 52px);
+
+    font-weight: normal;
+
+    line-height: 1.15;
+}
+
+.descripcion-portada {
+    max-width: 480px;
+
+    margin: 25px auto;
+
+    color: #76695e;
+
+    line-height: 1.8;
+}
+
+.rayita {
+    width: 80px;
+
+    height: 2px;
+
+    background: #d9b66a;
+
+    margin: 30px auto;
+
+    transform: rotate(-3deg);
+}
+
+
+/* ==================================================
+   HISTORIA
+   ================================================== */
+
+.historia {
+    min-height: 100vh;
+
+    display: none;
+
+    padding: 80px 20px;
+}
+
+.historia-papel {
+    position: relative;
+
+    width: min(850px, 94vw);
+
+    margin: auto;
+
+    padding:
+        70px clamp(25px, 7vw, 75px);
+
+    background: var(--papel);
+
+    box-shadow:
+        4px 8px 18px
+        rgba(72,50,30,.15);
+
+    transform: rotate(-.5deg);
+}
+
+.esquina {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    width: 35px;
+    height: 35px;
+
+    border-top:
+        2px solid #d8c8ac;
+
+    border-right:
+        2px solid #d8c8ac;
+}
+
+.historia-papel h2 {
+    font-family: Georgia, serif;
+
+    font-weight: normal;
+
+    font-size:
+        clamp(35px, 6vw, 48px);
+
+    margin-bottom: 50px;
+}
+
+.texto-historia {
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    color: #51483f;
+}
+
+.texto-historia p {
+    margin-bottom: 28px;
+}
+
+.texto-historia p:nth-child(2) {
+    padding-left: 20px;
+}
+
+.texto-historia p:nth-child(5) {
+    padding-right: 15px;
+}
+
+.texto-historia p:nth-child(8) {
+    padding-left: 12px;
+}
+
+.firma {
+    margin-top: 45px;
+
+    margin-bottom: 35px;
+
+    font-family: cursive;
+
+    font-size: 22px;
+
+    color: var(--rosa);
+
+    transform: rotate(-3deg);
+}
+
+
+/* ==================================================
+   MINI JUEGO
+   ================================================== */
+
+.juego {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+.juego-papel {
+    position: relative;
+
+    width: min(580px, 92vw);
+
+    padding: 55px 35px 50px;
+
+    text-align: center;
+
+    background: #fffdf7;
+
+    box-shadow:
+        5px 8px 18px
+        rgba(70,50,30,.18);
+
+    transform: rotate(1deg);
+}
+
+.juego-papel::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px dashed #ddcdb3;
+
+    pointer-events: none;
+}
+
+.garabato-juego {
+    font-family: cursive;
+
+    color: var(--rosa);
+
+    font-size: 48px;
+
+    line-height: 1;
+
+    margin-bottom: 5px;
+
+    animation:
+        latido 2s infinite;
+}
+
+.juego h2 {
+    font-family: Georgia, serif;
+
+    font-weight: normal;
+
+    font-size:
+        clamp(45px, 8vw, 62px);
+
+    color: #4b3c34;
+
+    margin-bottom: 12px;
+}
+
+.texto-juego {
+    color: #8a7a6c;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    margin-bottom: 35px;
+}
+
+.botones-amor {
+    position: relative;
+
+    min-height: 80px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+#si {
+    background: #e85d75;
+
+    box-shadow:
+        0 4px 0 #c94a61;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+#no,
+#talvez {
+    background: #b7aaa0;
+
+    box-shadow:
+        0 4px 0 #958980;
+
+    z-index: 10;
+}
+
+.ayuda-juego {
+    margin-top: 35px;
+
+    color: #9c8d7e;
+
+    font-family: cursive;
+
+    font-size: 17px;
+}
+
+
+/* ==================================================
+   FLORES
+   ================================================== */
+
+.flores {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding:
+        50px 20px 70px;
+}
+
+.regalo {
+    width: min(850px, 95vw);
+
+    text-align: center;
+}
+
+.mensaje-flores {
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    opacity: 0;
+
+    animation:
+        aparecer 1s ease forwards;
+}
+
+.flores-titulo {
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(30px, 5vw, 43px);
+
+    line-height: 1.25;
+
+    color: #554039;
+
+    margin-bottom: 22px;
+}
+
+.flores-texto {
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(16px, 2.5vw, 19px);
+
+    line-height: 1.8;
+
+    color: #74665c;
+
+    margin-bottom: 8px;
+}
+
+.flores-texto-final {
+    font-family: cursive;
+
+    font-size:
+        clamp(18px, 3vw, 23px);
+
+    line-height: 1.6;
+
+    color: #d49b19;
+
+    margin-top: 18px;
+}
+
+.ramo {
+    width: min(620px, 90vw);
+
+    margin: 35px auto 10px;
+
+    opacity: 0;
+
+    animation:
+        aparecerRamo 1.2s .4s ease forwards;
+}
+
+.ramo img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 620px;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 14px 18px
+            rgba(60,45,25,.16)
+        );
+}
+
+.dedicatoria {
+    margin-top: 5px;
+
+    opacity: 0;
+
+    animation:
+        aparecer 1s .9s ease forwards;
+}
+
+.dedicatoria p {
+    font-family: cursive;
+
+    color: #806f60;
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+.dedicatoria strong {
+    font-family: Georgia, serif;
+
+    color: #d99f12;
+
+    font-size: 34px;
+
+    font-weight: normal;
+}
+
+#floresContinuar {
+    margin-top: 30px;
+}
+
+
+/* ==================================================
+   ESCENA FINAL
+   ================================================== */
+
+.noche {
+    position: relative;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: none;
+
+    overflow: hidden;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 75% 18%,
+            rgba(44,48,64,.28),
+            transparent 25%
+        ),
+        #08090e;
+
+    color: #eee;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   LUNA
+   ================================================== */
+
+.luna {
+    position: absolute;
+
+    width: 82px;
+    height: 82px;
+
+    top: 10%;
+    right: 13%;
+
+    border-radius: 50%;
+
+    background: #e8e2c9;
+
+    box-shadow:
+        0 0 25px rgba(232,226,201,.18);
+
+    opacity: .9;
+}
+
+
+/* pequeño detalle para que parezca una luna creciente */
+
+.luna::after {
+    content: "";
+
+    position: absolute;
+
+    width: 78px;
+    height: 78px;
+
+    top: -5px;
+    left: 18px;
+
+    border-radius: 50%;
+
+    background: #08090e;
+}
+
+
+/* ==================================================
+   ESTRELLAS
+   ================================================== */
+
+.cielo-estrellas {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+}
+
+.estrella {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #eee;
+
+    opacity: .65;
+
+    box-shadow:
+        0 0 5px rgba(255,255,255,.45);
+
+    transition:
+        left 3s ease,
+        top 3s ease,
+        opacity 2s ease;
+}
+
+
+/* cielo normal */
+
+.estrella:nth-child(1)  { left: 8%;  top: 18%; }
+.estrella:nth-child(2)  { left: 16%; top: 37%; }
+.estrella:nth-child(3)  { left: 24%; top: 13%; }
+.estrella:nth-child(4)  { left: 31%; top: 27%; }
+.estrella:nth-child(5)  { left: 40%; top: 11%; }
+.estrella:nth-child(6)  { left: 48%; top: 32%; }
+.estrella:nth-child(7)  { left: 57%; top: 17%; }
+.estrella:nth-child(8)  { left: 67%; top: 29%; }
+.estrella:nth-child(9)  { left: 79%; top: 14%; }
+.estrella:nth-child(10) { left: 91%; top: 30%; }
+
+.estrella:nth-child(11) { left: 11%; top: 61%; }
+.estrella:nth-child(12) { left: 22%; top: 76%; }
+.estrella:nth-child(13) { left: 33%; top: 57%; }
+.estrella:nth-child(14) { left: 44%; top: 73%; }
+.estrella:nth-child(15) { left: 56%; top: 60%; }
+.estrella:nth-child(16) { left: 68%; top: 78%; }
+.estrella:nth-child(17) { left: 79%; top: 58%; }
+.estrella:nth-child(18) { left: 89%; top: 72%; }
+.estrella:nth-child(19) { left: 15%; top: 89%; }
+.estrella:nth-child(20) { left: 86%; top: 90%; }
+
+
+/* ==================================================
+   CORAZÓN DE ESTRELLAS
+   ================================================== */
+
+.noche.corazon-listo .estrella:nth-child(1) {
+    left: 43%;
+    top: 37%;
+}
+
+.noche.corazon-listo .estrella:nth-child(2) {
+    left: 46%;
+    top: 34%;
+}
+
+.noche.corazon-listo .estrella:nth-child(3) {
+    left: 49%;
+    top: 33%;
+}
+
+.noche.corazon-listo .estrella:nth-child(4) {
+    left: 52%;
+    top: 33%;
+}
+
+.noche.corazon-listo .estrella:nth-child(5) {
+    left: 55%;
+    top: 34%;
+}
+
+.noche.corazon-listo .estrella:nth-child(6) {
+    left: 58%;
+    top: 37%;
+}
+
+.noche.corazon-listo .estrella:nth-child(7) {
+    left: 41%;
+    top: 40%;
+}
+
+.noche.corazon-listo .estrella:nth-child(8) {
+    left: 44%;
+    top: 42%;
+}
+
+.noche.corazon-listo .estrella:nth-child(9) {
+    left: 47%;
+    top: 43%;
+}
+
+.noche.corazon-listo .estrella:nth-child(10) {
+    left: 50%;
+    top: 44%;
+}
+
+.noche.corazon-listo .estrella:nth-child(11) {
+    left: 53%;
+    top: 43%;
+}
+
+.noche.corazon-listo .estrella:nth-child(12) {
+    left: 56%;
+    top: 42%;
+}
+
+.noche.corazon-listo .estrella:nth-child(13) {
+    left: 59%;
+    top: 40%;
+}
+
+.noche.corazon-listo .estrella:nth-child(14) {
+    left: 43%;
+    top: 46%;
+}
+
+.noche.corazon-listo .estrella:nth-child(15) {
+    left: 46%;
+    top: 48%;
+}
+
+.noche.corazon-listo .estrella:nth-child(16) {
+    left: 49%;
+    top: 50%;
+}
+
+.noche.corazon-listo .estrella:nth-child(17) {
+    left: 52%;
+    top: 50%;
+}
+
+.noche.corazon-listo .estrella:nth-child(18) {
+    left: 55%;
+    top: 48%;
+}
+
+.noche.corazon-listo .estrella:nth-child(19) {
+    left: 58%;
+    top: 46%;
+}
+
+.noche.corazon-listo .estrella:nth-child(20) {
+    left: 52%;
+    top: 54%;
+}
+
+
+/* ==================================================
+   TEXTO FINAL
+   ================================================== */
+
+.mensaje-amor-final {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(680px, 88vw);
+
+    margin-top: 5vh;
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    transition:
+        opacity 1.8s ease,
+        transform 1.8s ease;
+}
+
+.mensaje-amor-final.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.final-texto {
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(19px, 2.4vw, 25px);
+
+    line-height: 1.8;
+
+    color: #dedbd0;
+
+    margin-bottom: 20px;
+
+    font-weight: normal;
+}
+
+.final-te-amo {
+    margin-top: 35px;
+
+    font-family: cursive;
+
+    font-size:
+        clamp(25px, 4vw, 38px);
+
+    line-height: 1.5;
+
+    color: #f0ede2;
+
+    letter-spacing: .5px;
+}
+
+
+/* ==================================================
+   FIRMA
+   ================================================== */
+
+.firma-final {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    font-family: cursive;
+
+    font-size: 14px;
+
+    color: rgba(255,255,255,.45);
+
+    opacity: 0;
+
+    transition:
+        opacity 2s ease;
+
+    z-index: 10;
+}
+
+.firma-final.visible {
+    opacity: 1;
+}
+
+
+/* ==================================================
+   ANIMACIONES
+   ================================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes aparecerRamo {
+
+    from {
+        opacity: 0;
+        transform:
+            scale(.92)
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* ==================================================
+   CELULAR
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    .nota-inicio {
+        padding:
+            55px 25px 45px;
+    }
+
+    .portada-papel {
+        padding:
+            60px 25px;
+    }
+
+    .historia {
+        padding:
+            40px 12px;
+    }
+
+    .historia-papel {
+        padding:
+            55px 25px;
+    }
+
+    .texto-historia {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .juego-papel {
+        padding:
+            55px 20px;
+    }
+
+    .botones-amor {
+        gap: 10px;
+    }
+
+    .ramo {
+        width: 95%;
+    }
+
+    .luna {
+        width: 60px;
+        height: 60px;
+
+        top: 9%;
+        right: 9%;
+    }
+
+    .luna::after {
+        width: 57px;
+        height: 57px;
+
+        left: 14px;
+    }
+
+    .mensaje-amor-final {
+        width: 88vw;
+
+        margin-top: 3vh;
+    }
+
+    .final-texto {
+        font-size: 18px;
+
+        line-height: 1.75;
+
+        margin-bottom: 17px;
+    }
+
+    .final-te-amo {
+        font-size: 27px;
+
+        margin-top: 28px;
+    }
+
+}
